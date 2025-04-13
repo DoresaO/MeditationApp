@@ -7,16 +7,14 @@ import android.widget.TextView;
 import androidx.appcompat.app.AppCompatActivity;
 
 public class OnboardingActivity extends AppCompatActivity {
-    private Button loginButton;
-    private TextView signupText;
 
     @Override
     protected void onCreate(Bundle saveInstanceState) {
         super.onCreate(saveInstanceState);
         setContentView(R.layout.activity_onboarding);
 
-        loginButton = findViewById(R.id.loginButton);
-        signupText = findViewById(R.id.signupText);
+        Button loginButton = findViewById(R.id.loginButton);
+        TextView signupText = findViewById(R.id.signupText);
 
         loginButton.setOnClickListener(view -> {
             Intent intent = new Intent(OnboardingActivity.this, LoginActivity.class);

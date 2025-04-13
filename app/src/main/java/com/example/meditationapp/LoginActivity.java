@@ -15,8 +15,6 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class LoginActivity extends AppCompatActivity {
     private EditText emailInput, passwordInput;
-    private Button loginButton;
-    private TextView signupRedirect, forgotPassword;
     private FirebaseAuth mAuth;
 
     @Override
@@ -28,9 +26,9 @@ public class LoginActivity extends AppCompatActivity {
 
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
-        loginButton = findViewById(R.id.loginButton);
-        signupRedirect = findViewById(R.id.signupRedirect);
-        forgotPassword = findViewById(R.id.forgotPassword);
+        Button loginButton = findViewById(R.id.loginButton);
+        TextView signupRedirect = findViewById(R.id.signupRedirect);
+        TextView forgotPassword = findViewById(R.id.forgotPassword);
 
         loginButton.setOnClickListener(view -> loginUser());
 

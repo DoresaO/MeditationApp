@@ -17,8 +17,6 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class SignupActivity extends AppCompatActivity {
     private EditText nameInput, emailInput, passwordInput;
-    private Button signupButton;
-    private TextView loginRedirect;
     private FirebaseAuth mAuth;
 
     @Override
@@ -31,8 +29,8 @@ public class SignupActivity extends AppCompatActivity {
         nameInput = findViewById(R.id.nameInput);
         emailInput = findViewById(R.id.emailInput);
         passwordInput = findViewById(R.id.passwordInput);
-        signupButton = findViewById(R.id.signupButton);
-        loginRedirect = findViewById(R.id.loginRedirect);
+        Button signupButton = findViewById(R.id.signupButton);
+        TextView loginRedirect = findViewById(R.id.loginRedirect);
 
         signupButton.setOnClickListener(view -> registerUser());
 

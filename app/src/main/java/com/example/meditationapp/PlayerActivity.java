@@ -39,9 +39,7 @@ public class PlayerActivity extends AppCompatActivity {
         });
 
         // Back arrow closes activity
-        findViewById(R.id.backButton).setOnClickListener(v -> {
-            finish();
-        });
+        findViewById(R.id.backButton).setOnClickListener(v -> finish());
     }
 
     @Override
