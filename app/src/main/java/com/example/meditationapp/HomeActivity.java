@@ -26,7 +26,6 @@ import java.util.Map;
 
 public class HomeActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
-    private Button logoutButton;
     private FirebaseFirestore db;
 
     @Override
@@ -36,7 +35,6 @@ public class HomeActivity extends AppCompatActivity {
 
         mAuth = FirebaseAuth.getInstance();
         db = FirebaseFirestore.getInstance();
-        logoutButton = findViewById(R.id.logoutButton);
 
         FirebaseUser currentUser = mAuth.getCurrentUser();
         if (currentUser == null) {
@@ -56,15 +54,7 @@ public class HomeActivity extends AppCompatActivity {
         String timeGreeting = getTimeGreeting();
         greetingText.setText("How are you feeling this " + timeGreeting + "?");
 
-        profileIcon.setOnClickListener(v -> {
-            startActivity(new Intent(HomeActivity.this, ProfileActivity.class));
-        });
-
-        logoutButton.setOnClickListener(v -> {
-            mAuth.signOut();
-            startActivity(new Intent(HomeActivity.this, LoginActivity.class));
-            finish();
-        });
+        profileIcon.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, ProfileActivity.class)));
 
         // Mood images + animation + Firebase saving
         setupMoodImage(R.id.moodCalm, "Calm");
@@ -73,14 +63,10 @@ public class HomeActivity extends AppCompatActivity {
         setupMoodImage(R.id.moodAnxious, "Anxious");
 
         Button meditationPlay = findViewById(R.id.playButton);
-        meditationPlay.setOnClickListener(v -> {
-            startActivity(new Intent(HomeActivity.this, PlayerActivity.class));
-        });
+        meditationPlay.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PlayerActivity.class)));
 
         Button cardioPlay = findViewById(R.id.playButton1);
-        cardioPlay.setOnClickListener(v -> {
-            startActivity(new Intent(HomeActivity.this, PlayerActivity.class));
-        });
+        cardioPlay.setOnClickListener(v -> startActivity(new Intent(HomeActivity.this, PlayerActivity.class)));
 
     }
 

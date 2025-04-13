@@ -43,6 +43,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-firestore'
 
 
+
     // Firebase Authentication (Important for Sign-In/Sign-Up)
     implementation 'com.google.firebase:firebase-auth'
 
