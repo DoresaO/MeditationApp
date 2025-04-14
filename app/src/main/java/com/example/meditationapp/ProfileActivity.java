@@ -89,7 +89,7 @@ public class ProfileActivity extends AppCompatActivity {
             NotificationHelper.scheduleReminder(this, calendar.getTimeInMillis());
             Toast.makeText(this, "Test reminder set for 1 minute from now", Toast.LENGTH_SHORT).show();
         });
-
+        findViewById(R.id.backButton).setOnClickListener(v -> finish());
     }
 
     @SuppressLint("SetTextI18n")
